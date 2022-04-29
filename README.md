@@ -165,11 +165,13 @@ Resources
 
 ***Read or watch:***
 
-* How to use Fabric
-* How to use Fabric in Python
-* Fabric and command line options
-* CI/CD concept page
-* Nginx configuration for beginners
-* Difference between root and alias on NGINX
-* Fabric for Python 3
-* Fabric Documentation
+* [How to use Fabric](https://www.digitalocean.com/community/tutorials/how-to-use-fabric-to-automate-administration-tasks-and-deployments)
+* [How to use Fabric in Python](https://www.pythonforbeginners.com/systems-programming/how-to-use-fabric-in-python)
+* [Fabric and command line options](https://docs.fabfile.org/en/1.13/usage/fab.html)
+* [CI/CD concept page: Student access only](https://intranet.hbtn.io/concepts/43)
+* [Nginx configuration for beginners](https://nginx.org/en/docs/beginners_guide.html)
+* [Difference between root and alias on NGINX](https://fedingo.com/nginx-alias-vs-root/)
+  * [short description](https://wubigo.com/post/nginx-root-vs-alias/)
+  * [NGINIX: server fault ](https://serverfault.com/questions/1035733/nginx-difference-between-root-and-alias)
+* [Fabric for Python 3](https://github.com/mathiasertl/fabric)
+* [Fabric Documentation](https://www.fabfile.org/)
