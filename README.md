@@ -1,8 +1,20 @@
-<center> <h1>HBNB - The Console</h1> </center>
+HBNB - The Console
+===
 
 This repository contains the initial stage of a student project to build a clone of the AirBnB website. This stage implements a backend interface, or console, to manage program data. Console commands allow the user to create, update, and destroy objects, as well as manage file storage. Using a system of JSON serialization/deserialization, storage is persistent between sessions.
 
+Before getting started...
 ---
+
+## General Objectives
+* What is Fabric
+* How to deploy code to a server easily
+* What is a `tgz` archive
+* How to execute Fabric command locally
+* How to execute Fabric command remotely
+* How to transfer files with Fabric
+* How to manage Nginx configuration
+* What is the difference between `root` and `alias` in a Nginx configuration
 
 <center><h3>Repository Contents by Project Task</h3> </center>
 
@@ -89,8 +101,10 @@ Usage: show <class_name> <_id>
 'updated_at': datetime.datetime(2020, 2, 18, 14, 21, 12, 96971)}
 (hbnb)  
 ```
+
 ###### Example 2: Destroy an object
-Usage: destroy <class_name> <_id>
+Usage: destroy `<class_name> <_id>`
+
 ```
 (hbnb) destroy BaseModel 3aa5babc-efb6-4041-bfe9-3cc9727588f8
 (hbnb) show BaseModel 3aa5babc-efb6-4041-bfe9-3cc9727588f8
@@ -116,6 +130,7 @@ Usage: <class_name>.all()
 ```
 
 ###### Example 1: Destroy a User
+
 Usage: <class_name>.destroy(<_id>)
 ```
 (hbnb) User.destroy("99f45908-1d17-46d1-9dd2-b7571128115b")
@@ -123,16 +138,20 @@ Usage: <class_name>.destroy(<_id>)
 (hbnb) User.all()
 (hbnb) ["[User] (98bea5de-9cb0-4d78-8a9d-c4de03521c30) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134362), 'id': '98bea5de-9cb0-4d78-8a9d-c4de03521c30', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134343)}"]
 ```
+
 ###### Example 2: Update User (by attribute)
 Usage: <class_name>.update(<_id>, <attribute_name>, <attribute_value>)
+
 ```
 (hbnb) User.update("98bea5de-9cb0-4d78-8a9d-c4de03521c30", name "Todd the Toad")
 (hbnb)
 (hbnb) User.all()
 (hbnb) ["[User] (98bea5de-9cb0-4d78-8a9d-c4de03521c30) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134362), 'id': '98bea5de-9cb0-4d78-8a9d-c4de03521c30', 'name': 'Todd the Toad', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134343)}"]
 ```
+
 ###### Example 3: Update User (by dictionary)
 Usage: <class_name>.update(<_id>, <dictionary>)
+
 ```
 (hbnb) User.update("98bea5de-9cb0-4d78-8a9d-c4de03521c30", {'name': 'Fred the Frog', 'age': 9})
 (hbnb)
@@ -140,3 +159,17 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 (hbnb) ["[User] (98bea5de-9cb0-4d78-8a9d-c4de03521c30) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134362), 'name': 'Fred the Frog', 'age': 9, 'id': '98bea5de-9cb0-4d78-8a9d-c4de03521c30', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134343)}"]
 ```
 <br>
+
+Resources
+===
+
+***Read or watch:***
+
+* How to use Fabric
+* How to use Fabric in Python
+* Fabric and command line options
+* CI/CD concept page
+* Nginx configuration for beginners
+* Difference between root and alias on NGINX
+* Fabric for Python 3
+* Fabric Documentation
