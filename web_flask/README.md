@@ -21,6 +21,7 @@ Resources
 * [Rendering Templates](https://flask.palletsprojects.com/en/1.0.x/quickstart/#rendering-templates)
 * [Synopsis](https://jinja.palletsprojects.com/en/2.9.x/templates/#synopsis)
 * [Variables](https://jinja.palletsprojects.com/en/2.9.x/templates/#variables)
+* [Tests: List of Builtin Tests](https://jinja.palletsprojects.com/en/2.9.x/templates/#builtin-tests)
 * [Comments](https://jinja.palletsprojects.com/en/2.9.x/templates/#comments)
 * [Whitespace Control](https://jinja.palletsprojects.com/en/2.9.x/templates/#whitespace-control)
 * [List of Control Structures](https://jinja.palletsprojects.com/en/2.9.x/templates/#list-of-control-structures) ***(read up to “Call”)***
