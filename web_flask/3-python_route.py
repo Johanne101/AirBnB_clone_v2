@@ -8,7 +8,8 @@ Routes:
 >> `/hbnb` : display “HBNB”
     - The default value of <text> is “is cool”
 >> `/c/<text>` : display “C ”
->> `/python/(<text>)` : display “Python ” (replace underscore _ symbols with a space )
+>> `/python/(<text>)` : display “Python ”
+ (replace underscore _ symbols with a space )
 - Route definition option: strict_slashes=False
 """
 from flask import Flask
@@ -39,4 +40,3 @@ def python_route(text_py='is cool'):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=False)
-
