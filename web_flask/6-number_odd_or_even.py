@@ -30,7 +30,7 @@ def hello_hbnb():
 
 
 @app.route('/hbnb', strict_slashes=False)
-def redirect():
+def hbnb_route():
     return('HBNB')
 
 
