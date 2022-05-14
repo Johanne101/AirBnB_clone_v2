@@ -8,7 +8,8 @@ Routes:
 1. `/hbnb` : display “HBNB”
 --- The default value of <text> is “is cool” ---
 2. `/c/<text>` : display “C ”
-3. `/python/(<text>)` : display “Python ” (replace underscore _ symbols with a space )
+3. `/python/(<text>)` : display “Python ”
+(replace underscore _ symbols with a space )
 4. `/number/<n>` : display “n is a number” only if n is an integer
 
 --- `h1` tag: “Number: n” inside the tag body ---
