@@ -2,34 +2,39 @@
 """
 Script generates a .tgz archive from web_static folder
 """
-from fabric.api import local, run, put, env
-from datetime import datetime
-from os import path
-
-
+from fabric.api import put, run, env
+from os.path import exists
 env.hosts = ['35.237.69.6', '54.158.6.195']
 env.user = 'ubuntu'
 
 
 def do_deploy(archive_path):
-    '''
-    Distributes an archive to your web servers
-    '''
-    if path.exists(archive_path):
-        try:
-            put(archive_path, '/tmp/')
-            filename = archive_path[9:]
-            no_ext = filename[:-4]
-            dir_name = '/data/web_static/releases/' + no_ext + '/'
-            run('mkdir -p ' + dir_name)
-            run('sudo tar -xzf /tmp/' + filename + ' -C ' + dir_name)
-            run('rm -f /tmp/' + filename)
-            run('sudo mv ' + dir_name + '/web_static/* ' + dir_name)
-            run('rm -rf /data/web_static/current')
-            run('ln -s ' + dir_name + ' /data/web_static/current')
-            print('New version deployed!')
-            return True
-        except:
-            return False
-    else:
+    """Fabric script that distributes an archive to your web servers,
+    using the function do_deploy
+    """
+    if exists(archive_path) is False:
+        return False
+
+    start = archive_path.find("web_static")
+    end = archive_path.find(".tgz")
+    # Getting filename withouth extension
+    fname_wout_e = archive_path[start:end]
+    # Getting filename with extension
+    fname_we = archive_path[start:]
+
+    try:
+        put(archive_path, "/tmp/")
+        run("mkdir -p /data/web_static/releases/{}/".format(fname_wout_e))
+        run("sudo tar -xzf /tmp/{} -C /data/web_static/releases/{}/"
+            .format(fname_we, fname_wout_e))
+        run("rm /tmp/{}".format(fname_we))
+        run("sudo mv /data/web_static/releases/{}/web_static/* /data/web_sta\
+tic/releases/{}/".format(fname_wout_e, fname_wout_e))
+        run("rm -rf /data/web_static/releases/{}/web_static"
+            .format(fname_wout_e))
+        run("rm -rf /data/web_static/current")
+        run("ln -s /data/web_static/releases/{}/ /data/web_static/current"
+            .format(fname_wout_e))
+        return True
+    except Exception:
         return False
