@@ -80,5 +80,9 @@ class DBStorage:
         self.__session = session_secure
 
     def close(self):
-        """Close the session"""
+        """
+        Releasing the session:
+            any existing transactional/connection
+            resources still being held.
+        """
         self.__session.close()
